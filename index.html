@@ -12,13 +12,21 @@
             padding: 0;
         }
         header {
-            background-color: #007BFF;
+            background-color: #333; /* Dark background for header */
             color: white;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
         }
+        h1 {
+            color: #ffcc00; /* Bright color for title */
+            font-size: 3em; /* Larger font size */
+            margin: 0; /* Remove margin */
+        }
+        h2 {
+            color: #007BFF; /* Different color for section headings */
+        }
         nav {
-            background-color: #333;
+            background-color: #444; /* Darker background for nav */
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -32,7 +40,7 @@
             color: black; /* Black color for Home link */
         }
         nav a.contact {
-            color: blue; /* Blue color for Contact Us link */
+            color: #ffcc00; /* Yellow color for Contact Us link */
         }
         nav a:hover {
             text-decoration: underline; /* Underline effect on hover */
@@ -84,6 +92,14 @@
             color: gold; /* Color of the stars */
             cursor: pointer; /* Pointer cursor for interactivity */
         }
+        .website-rating {
+            margin: 30px 0; /* Margin for website rating */
+            text-align: center; /* Center align the website rating */
+        }
+        .website-rating span {
+            font-size: 20px; /* Font size for rating */
+            color: #007BFF; /* Color for rating */
+        }
     </style>
 </head>
 <body>
@@ -107,11 +123,11 @@
             <p class="price">$19.99</p>
             <a href="#" class="btn">Add to Cart</a>
             <div class="rating">
-                <span class="star" onclick="setRating(1)">&#9733;</span>
-                <span class="star" onclick="setRating(2)">&#9733;</span>
-                <span class="star" onclick="setRating(3)">&#9733;</span>
-                <span class="star" onclick="setRating(4)">&#9733;</span>
-                <span class="star" onclick="setRating(5)">&#9733;</span>
+                <span class="star" onclick="setRating(1, 1)">&#9733;</span>
+                <span class="star" onclick="setRating(2, 1)">&#9733;</span>
+                <span class="star" onclick="setRating(3, 1)">&#9733;</span>
+                <span class="star" onclick="setRating(4, 1)">&#9733;</span>
+                <span class="star" onclick="setRating(5, 1)">&#9733;</span>
                 <p id="ratingText1"></p>
             </div>
         </div>
@@ -146,11 +162,26 @@
             </div>
         </div>
         <!-- Add more products as needed -->
+        
+        <!-- Website Rating Section -->
+        <div class="website-rating">
+            <h2>Rate Our Website</h2>
+            <span class="star" onclick="setWebsiteRating(1)">&#9733;</span>
+            <span class="star" onclick="setWebsiteRating(2)">&#9733;</span>
+            <span class="star" onclick="setWebsiteRating(3)">&#9733;</span>
+            <span class="star" onclick="setWebsiteRating(4)">&#9733;</span>
+            <span class="star" onclick="setWebsiteRating(5)">&#9733;</span>
+            <p id="websiteRatingText"></p>
+        </div>
     </div>
 
     <script>
         function setRating(rating, product) {
             document.getElementById("ratingText" + product).innerText = "You rated this product: " + rating + " stars";
+        }
+
+        function setWebsiteRating(rating) {
+            document.getElementById("websiteRatingText").innerText = "You rated our website: " + rating + " stars";
         }
     </script>
 </body>
