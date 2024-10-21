@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to STORE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white; /* Default color for all links */
+            text-decoration: none; /* Remove underline from links */
+            padding: 10px 15px; /* Add some padding */
+        }
+        nav a.home {
+            color: black; /* Black color for Home link */
+        }
+        nav a.contact {
+            color: blue; /* Blue color for Contact Us link */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .rating {
+            margin: 20px 0; /* Add margin above and below the rating section */
+        }
+        .star {
+            font-size: 30px; /* Size of the stars */
+            color: gold; /* Color of the stars */
+            cursor: pointer; /* Pointer cursor for interactivity */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Online Store</h1>
+        <p>Hey welcome to my website, I'm Saad from Morocco. This website will be under construction soon!</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="home">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="contact">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <h2>Rate Our Store</h2>
+        <div class="rating">
+            <span class="star" onclick="setRating(1)">&#9733;</span>
+            <span class="star" onclick="setRating(2)">&#9733;</span>
+            <span class="star" onclick="setRating(3)">&#9733;</span>
+            <span class="star" onclick="setRating(4)">&#9733;</span>
+            <span class="star" onclick="setRating(5)">&#9733;</span>
+            <p id="ratingText"></p>
+        </div>
+    </div>
+
+    <script>
+        function setRating(rating) {
+            document.getElementById("ratingText").innerText = "You rated this store: " + rating + " stars";
+        }
+    </script>
+</body>
+</html>
