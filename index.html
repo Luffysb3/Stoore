@@ -79,7 +79,7 @@
             background-color: #e68900; /* Darker Orange on Hover */
         }
 
-        /* Rating stars */
+        /* Dynamic Rating stars */
         .stars {
             display: flex;
             justify-content: center;
@@ -87,7 +87,11 @@
         }
         .stars span {
             font-size: 1.5em;
-            color: #ffc107; /* Yellow stars */
+            cursor: pointer;
+            color: #ccc; /* Default star color */
+        }
+        .stars span.active {
+            color: #ffc107; /* Yellow stars when clicked */
         }
 
         /* Footer */
@@ -99,85 +103,123 @@
             margin-top: 30px;
         }
 
-        /* Contact Us and About Us Sections */
-        .section {
-            padding: 40px;
-            background-color: #f9f9f9;
+        /* Contact Us Form */
+        .contact-container {
+            max-width: 600px;
             margin: 20px auto;
-            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .section h2 {
+        .contact-container h2 {
+            text-align: center;
             color: #333;
         }
-        .section p {
-            color: #666;
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-container label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .contact-container input, .contact-container textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .contact-container button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-container button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1>Welcome to Luffy Store</h1>
+        <h1>Welcome to Luffy's Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#home" style="background-color: black;">Home</a>
-        <a href="#about" style="background-color: #007bff;">About Us</a>
-        <a href="#contact" style="background-color: #28a745;">Contact Us</a>
-    </nav>
-
-    <!-- Product Section -->
-    <div id="home" class="container">
+    <div class="container">
+        <!-- Product 1 -->
         <div class="product">
-            <img src="IMG_2033.jpeg" alt="Product 1">
+            <img src="product1.jpg" alt="Product 1">
             <h3>Product 1</h3>
-            <p>Best quality shoes for your adventure.</p>
-            <p class="price">$49.99</p>
-            <div class="stars">
-                <span>★ ★ ★ ★ ☆</span>
+            <p>Short description of Product 1.</p>
+            <p class="price">$19.99</p>
+            <div class="stars" data-product-id="1">
+                <span data-value="1">&#9733;</span>
+                <span data-value="2">&#9733;</span>
+                <span data-value="3">&#9733;</span>
+                <span data-value="4">&#9733;</span>
+                <span data-value="5">&#9733;</span>
             </div>
             <a href="#" class="btn">Add to Cart</a>
         </div>
-        <div class="product">
-            <img src="IMG_2033.jpeg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>Comfortable sneakers for daily use.</p>
-            <p class="price">$69.99</p>
-            <div class="stars">
-                <span>★ ★ ★ ★ ★</span>
-            </div>
-            <a href="#" class="btn">Add to Cart</a>
-        </div>
-        <div class="product">
-            <img src="IMG_2033.jpeg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Stylish shoes for a night out.</p>
-            <p class="price">$79.99</p>
-            <div class="stars">
-                <span>★ ★ ★ ☆ ☆</span>
-            </div>
-            <a href="#" class="btn">Add to Cart</a>
-        </div>
+        <!-- More products can go here -->
     </div>
 
     <!-- About Us Section -->
-    <div id="about" class="section">
+    <div class="about-container" style="text-align: center; padding: 40px; background-color: #f8f9fa;">
         <h2>About Us</h2>
-        <p>We are saad Store, dedicated to providing high-quality products for everyone. Our mission is to make your shopping experience enjoyable and hassle-free.also we will keep upgrading our website until we get the best one ,have nice day</p>
+        <p>Luffy's Store is dedicated to bringing you the best products at the best prices. Our team works hard to ensure customer satisfaction, and we offer a wide range of products to suit your needs.</p>
     </div>
 
     <!-- Contact Us Section -->
-    <div id="contact" class="section">
+    <div class="contact-container">
         <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach us at <a href="mailto:saadtaourti01@gmail.com">saadtaourti01@gmail.com</a>.</p>
+        <form action="https://formspree.io/f/mayplarz" method="POST">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2024 Luffy Store. All rights reserved.</p>
+        <p>&copy; 2024 Luffy Store. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle rating system
+        document.querySelectorAll('.stars span').forEach(star => {
+            star.addEventListener('click', function() {
+                const productID = this.parentElement.getAttribute('data-product-id');
+                const ratingValue = this.getAttribute('data-value');
+                
+                // Reset previous active stars
+                this.parentElement.querySelectorAll('span').forEach(s => {
+                    s.classList.remove('active');
+                });
+                
+                // Highlight selected stars
+                for (let i = 0; i < ratingValue; i++) {
+                    this.parentElement.querySelectorAll('span')[i].classList.add('active');
+                }
+
+                alert(`You rated Product ${productID} with ${ratingValue} stars!`);
+            });
+        });
+    </script>
 </body>
 </html>
