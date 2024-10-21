@@ -3,186 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to STORE</title>
+    <title>STORE - Your Online Shop</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         header {
-            background-color: #333; /* Dark background for header */
+            background-color: #333;
             color: white;
             padding: 20px;
             text-align: center;
         }
-        h1 {
-            color: #ffcc00; /* Bright color for title */
-            font-size: 3em; /* Larger font size */
-            margin: 0; /* Remove margin */
-        }
-        h2 {
-            color: #007BFF; /* Different color for section headings */
-        }
         nav {
-            background-color: #444; /* Darker background for nav */
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+            background-color: #444;
+            overflow: hidden;
         }
         nav a {
-            color: white; /* Default color for all links */
-            text-decoration: none; /* Remove underline from links */
-            padding: 10px 15px; /* Add some padding */
-        }
-        nav a.home {
-            color: black; /* Black color for Home link */
-        }
-        nav a.contact {
-            color: #ffcc00; /* Yellow color for Contact Us link */
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
         nav a:hover {
-            text-decoration: underline; /* Underline effect on hover */
+            background-color: #555;
         }
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .product {
-            background: white;
+            background: #f4f4f4;
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 10px;
             text-align: center;
-            margin: 20px 0; /* Margin above and below each product */
-            display: inline-block; /* Display products inline */
-            width: calc(33% - 40px); /* Three products in a row */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            margin: 10px;
         }
         .product img {
             max-width: 100%;
             height: auto;
         }
-        .product h3 {
+        h2, h3 {
             color: #333;
         }
-        .product p {
-            color: #777;
+        .rating {
+            margin: 10px 0;
         }
-        .price {
-            font-weight: bold;
-            color: green;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            margin-top: 10px;
-            background-color: #28a745;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
             color: white;
-            text-decoration: none;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .rating {
-            margin: 20px 0; /* Add margin above and below the rating section */
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .star {
-            font-size: 30px; /* Size of the stars */
-            color: gold; /* Color of the stars */
-            cursor: pointer; /* Pointer cursor for interactivity */
-        }
-        .website-rating {
-            margin: 30px 0; /* Margin for website rating */
-            text-align: center; /* Center align the website rating */
-        }
-        .website-rating span {
-            font-size: 20px; /* Font size for rating */
-            color: #007BFF; /* Color for rating */
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Online Store</h1>
-        <p>Hey welcome to my website, I'm Saad from Morocco. This website will be under construction soon!</p>
+        <h1>Welcome to STORE</h1>
     </header>
-
+    
     <nav>
-        <a href="index.html" class="home">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html" class="contact">Contact Us</a>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#products">Products</a>
     </nav>
 
-    <div class="container">
+    <div class="container" id="home">
+        <h2>Home</h2>
+        <p>Welcome to my online store! This website is currently under construction.</p>
+    </div>
+
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>STORE is dedicated to bringing you the best products at affordable prices.</p>
+    </div>
+
+    <div class="container" id="products">
         <h2>Our Products</h2>
         <div class="product">
             <img src="product1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>Short description of Product 1.</p>
+            <p class="rating">Rating: ★★★★☆</p>
             <p class="price">$19.99</p>
-            <a href="#" class="btn">Add to Cart</a>
-            <div class="rating">
-                <span class="star" onclick="setRating(1, 1)">&#9733;</span>
-                <span class="star" onclick="setRating(2, 1)">&#9733;</span>
-                <span class="star" onclick="setRating(3, 1)">&#9733;</span>
-                <span class="star" onclick="setRating(4, 1)">&#9733;</span>
-                <span class="star" onclick="setRating(5, 1)">&#9733;</span>
-                <p id="ratingText1"></p>
-            </div>
+            <button>Add to Cart</button>
         </div>
         <div class="product">
             <img src="product2.jpg" alt="Product 2">
             <h3>Product 2</h3>
             <p>Short description of Product 2.</p>
+            <p class="rating">Rating: ★★★☆☆</p>
             <p class="price">$29.99</p>
-            <a href="#" class="btn">Add to Cart</a>
-            <div class="rating">
-                <span class="star" onclick="setRating(1, 2)">&#9733;</span>
-                <span class="star" onclick="setRating(2, 2)">&#9733;</span>
-                <span class="star" onclick="setRating(3, 2)">&#9733;</span>
-                <span class="star" onclick="setRating(4, 2)">&#9733;</span>
-                <span class="star" onclick="setRating(5, 2)">&#9733;</span>
-                <p id="ratingText2"></p>
-            </div>
+            <button>Add to Cart</button>
         </div>
         <div class="product">
             <img src="product3.jpg" alt="Product 3">
             <h3>Product 3</h3>
             <p>Short description of Product 3.</p>
+            <p class="rating">Rating: ★★★★★</p>
             <p class="price">$39.99</p>
-            <a href="#" class="btn">Add to Cart</a>
-            <div class="rating">
-                <span class="star" onclick="setRating(1, 3)">&#9733;</span>
-                <span class="star" onclick="setRating(2, 3)">&#9733;</span>
-                <span class="star" onclick="setRating(3, 3)">&#9733;</span>
-                <span class="star" onclick="setRating(4, 3)">&#9733;</span>
-                <span class="star" onclick="setRating(5, 3)">&#9733;</span>
-                <p id="ratingText3"></p>
-            </div>
-        </div>
-        <!-- Add more products as needed -->
-        
-        <!-- Website Rating Section -->
-        <div class="website-rating">
-            <h2>Rate Our Website</h2>
-            <span class="star" onclick="setWebsiteRating(1)">&#9733;</span>
-            <span class="star" onclick="setWebsiteRating(2)">&#9733;</span>
-            <span class="star" onclick="setWebsiteRating(3)">&#9733;</span>
-            <span class="star" onclick="setWebsiteRating(4)">&#9733;</span>
-            <span class="star" onclick="setWebsiteRating(5)">&#9733;</span>
-            <p id="websiteRatingText"></p>
+            <button>Add to Cart</button>
         </div>
     </div>
 
-    <script>
-        function setRating(rating, product) {
-            document.getElementById("ratingText" + product).innerText = "You rated this product: " + rating + " stars";
-        }
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xjvonkpy" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        function setWebsiteRating(rating) {
-            document.getElementById("websiteRatingText").innerText = "You rated our website: " + rating + " stars";
-        }
-    </script>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 STORE. All rights reserved.</p>
+    </footer>
 </body>
 </html>
