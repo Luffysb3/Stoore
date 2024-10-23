@@ -9,93 +9,109 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #121212; /* Dark background */
+            color: #f4f4f4; /* Light text */
         }
-
         header {
-            background-color: #1e1e1e;
+            background-color: #1f1f1f; /* Dark header */
             color: white;
             text-align: center;
             padding: 20px 0;
         }
-
         nav {
-            background-color: #2d572c; /* Dark Green */
+            background-color: #333; /* Darker navbar */
             padding: 10px 0;
             text-align: right;
             padding-right: 20px;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
         }
-
         nav a:hover {
             color: #ff9800; /* Orange Hover Color */
         }
-
+        .hero {
+            background: linear-gradient(135deg, #ff6f61, #8e44ad); /* Modern gradient */
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3em;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.4em;
+        }
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
-        }
-
-        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
-
-        .product-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        .product {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-align: center;
             transition: transform 0.3s ease;
         }
-
-        .product-card:hover {
-            transform: translateY(-5px);
+        .product:hover {
+            transform: translateY(-10px); /* Lift on hover */
         }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .product-info h3 {
-            font-size: 1.5em;
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 10px;
         }
-
-        .product-info p {
-            font-size: 1em;
-            margin-bottom: 15px;
-            color: #666;
+        .product h3 {
+            margin-bottom: 10px;
         }
-
-        .product-info .price {
-            font-size: 1.2em;
+        .product p {
+            color: #bbb;
+        }
+        .price {
             font-weight: bold;
-            color: #2d572c; /* Dark Green */
         }
-
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff9800; /* Orange Button */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #e67e22; /* Darker Orange on Hover */
+        }
+        /* Dynamic colors for each product */
+        .product:nth-child(1) { background-color: #f44336; /* Red */ }
+        .product:nth-child(2) { background-color: #e91e63; /* Pink */ }
+        .product:nth-child(3) { background-color: #9c27b0; /* Purple */ }
+        .product:nth-child(4) { background-color: #673ab7; /* Deep Purple */ }
+        .product:nth-child(5) { background-color: #3f51b5; /* Indigo */ }
+        .product:nth-child(6) { background-color: #2196f3; /* Blue */ }
+        .product:nth-child(7) { background-color: #03a9f4; /* Light Blue */ }
+        .product:nth-child(8) { background-color: #00bcd4; /* Cyan */ }
+        .product:nth-child(9) { background-color: #009688; /* Teal */ }
+        .product:nth-child(10) { background-color: #4caf50; /* Green */ }
+        
         footer {
-            background-color: #1e1e1e;
+            background-color: #1f1f1f; /* Darker footer */
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             margin-top: 30px;
+        }
+        footer p {
+            color: #777;
         }
     </style>
 </head>
@@ -108,113 +124,108 @@
         </nav>
     </header>
 
+    <div class="hero">
+        <h2>Discover the Best Products!</h2>
+        <p>Your one-stop shop for everything you need!</p>
+    </div>
+
     <div class="container">
         <h2>Featured Products</h2>
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 1">
-                <div class="product-info">
-                    <h3>Product 1</h3>
-                    <p>Amazing product for daily use.</p>
-                    <p class="price">$29.99</p>
-                </div>
-            </div>
+        
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Short description of Product 1.</p>
+            <p class="price">$19.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 2">
-                <div class="product-info">
-                    <h3>Product 2</h3>
-                    <p>High quality and durable.</p>
-                    <p class="price">$39.99</p>
-                </div>
-            </div>
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Short description of Product 2.</p>
+            <p class="price">$29.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 3">
-                <div class="product-info">
-                    <h3>Product 3</h3>
-                    <p>Perfect for your lifestyle.</p>
-                    <p class="price">$24.99</p>
-                </div>
-            </div>
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Short description of Product 3.</p>
+            <p class="price">$39.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 4">
-                <div class="product-info">
-                    <h3>Product 4</h3>
-                    <p>Reliable and stylish design.</p>
-                    <p class="price">$49.99</p>
-                </div>
-            </div>
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="product4.jpg" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Short description of Product 4.</p>
+            <p class="price">$49.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 5 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 5">
-                <div class="product-info">
-                    <h3>Product 5</h3>
-                    <p>Perfect for outdoor adventures.</p>
-                    <p class="price">$59.99</p>
-                </div>
-            </div>
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="product5.jpg" alt="Product 5">
+            <h3>Product 5</h3>
+            <p>Short description of Product 5.</p>
+            <p class="price">$59.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 6 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 6">
-                <div class="product-info">
-                    <h3>Product 6</h3>
-                    <p>Best choice for every occasion.</p>
-                    <p class="price">$34.99</p>
-                </div>
-            </div>
+        <!-- Product 6 -->
+        <div class="product">
+            <img src="product6.jpg" alt="Product 6">
+            <h3>Product 6</h3>
+            <p>Short description of Product 6.</p>
+            <p class="price">$69.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 7 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 7">
-                <div class="product-info">
-                    <h3>Product 7</h3>
-                    <p>Innovative design with comfort.</p>
-                    <p class="price">$44.99</p>
-                </div>
-            </div>
+        <!-- Product 7 -->
+        <div class="product">
+            <img src="product7.jpg" alt="Product 7">
+            <h3>Product 7</h3>
+            <p>Short description of Product 7.</p>
+            <p class="price">$79.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 8 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 8">
-                <div class="product-info">
-                    <h3>Product 8</h3>
-                    <p>Stylish and trendy accessory.</p>
-                    <p class="price">$19.99</p>
-                </div>
-            </div>
+        <!-- Product 8 -->
+        <div class="product">
+            <img src="product8.jpg" alt="Product 8">
+            <h3>Product 8</h3>
+            <p>Short description of Product 8.</p>
+            <p class="price">$89.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 9 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 9">
-                <div class="product-info">
-                    <h3>Product 9</h3>
-                    <p>Luxury item for a great price.</p>
-                    <p class="price">$89.99</p>
-                </div>
-            </div>
+        <!-- Product 9 -->
+        <div class="product">
+            <img src="product9.jpg" alt="Product 9">
+            <h3>Product 9</h3>
+            <p>Short description of Product 9.</p>
+            <p class="price">$99.99</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
 
-            <!-- Product 10 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x200" alt="Product 10">
-                <div class="product-info">
-                    <h3>Product 10</h3>
-                    <p>Functional and fashionable.</p>
-                    <p class="price">$69.99</p>
-                </div>
-            </div>
+        <!-- Product 10 -->
+        <div class="product">
+            <img src="product10.jpg" alt="Product 10">
+            <h3>Product 10</h3>
+            <p>Short description of Product 10.</p>
+            <p class="price">$109.99</p>
+            <a href="#" class="btn">Add to Cart</a>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Luffy Store. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
